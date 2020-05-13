@@ -1,7 +1,13 @@
-export class Sorter {
-  collection: number[];
+export interface Collection {
+  length: number;
+  compare(leftIndex: number, rightIndex: number): boolean;
+  swap(leftIndex: number, rightIndex: number): void;
+}
 
-  constructor(collection: number[]) {
+export class Sorter {
+  collection: Collection;
+
+  constructor(collection: Collection) {
     this.collection = collection;
   }
 
@@ -9,10 +15,8 @@ export class Sorter {
     const collectionLength = this.collection.length;
     for (let i = 0; i < collectionLength; i++) {
       for (let j = 0; j < collectionLength - i; j++) {
-        if (this.collection[j] > this.collection[j + 1]) {
-          let temp = this.collection[j + 1];
-          this.collection[j + 1] = this.collection[j];
-          this.collection[j] = temp;
+        if (this.collection.compare(j, j + 1)) {
+          this.collection.swap(j, j + 1);
         }
       }
     }
