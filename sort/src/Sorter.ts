@@ -1,13 +1,20 @@
-class Sorter {
+export class Sorter {
   collection: number[];
 
   constructor(collection: number[]) {
     this.collection = collection;
   }
 
-  sort(): void {}
+  sort(): void {
+    const collectionLength = this.collection.length;
+    for (let i = 0; i < collectionLength; i++) {
+      for (let j = 0; j < collectionLength - i; j++) {
+        if (this.collection[j] > this.collection[j + 1]) {
+          let temp = this.collection[j + 1];
+          this.collection[j + 1] = this.collection[j];
+          this.collection[j] = temp;
+        }
+      }
+    }
+  }
 }
-
-const sorter = new Sorter([10, 9, -3, 8]);
-sorter.sort();
-console.log(`sorted collection `, sorter.collection);
