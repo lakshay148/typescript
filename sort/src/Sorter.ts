@@ -14,7 +14,7 @@ export class Sorter {
   sort(): void {
     const collectionLength = this.collection.length;
     for (let i = 0; i < collectionLength; i++) {
-      for (let j = 0; j < collectionLength - i; j++) {
+      for (let j = 0; j < collectionLength - i - 1; j++) {
         if (this.collection.compare(j, j + 1)) {
           this.collection.swap(j, j + 1);
         }
