@@ -1,0 +1,982 @@
+{
+"states": [
+ {
+"index": 0,
+ "title": "Credit Card",
+ titleStyle": { "color": "white"},
+ "iconStyle": { "tintColor": "white"},
+ style": { "backgroundColor": "rgba(5,47,95,1)"},
+ initialState": 0,
+ fields": [
+ {
+"index": 0,
+ type": "label",
+ props": {
+"text": "Personal Details",
+ fontWeight": "bold",
+ level": 4,
+ style": { "textAlign": "left", "color": "#2137C7", "fontSize": 24 },
+ },
+ },
+ {
+"index": 1,
+ type": "View",
+ props": {
+"style": {
+"backgroundColor": "#E00067",
+ height": 2,
+ width": 56,
+ marginBottom": 18,
+ },
+ },
+ },
+ {
+"index": 2,
+ type": "name",
+ props": { "noOfWords": 1, "label": "First Name"},
+ key": "cc_quotes_journey_sbc",
+ value": "firstName.valueFromNavigationParams",
+ actionIds": [
+ {
+"triggerType": "onSubmitEditing",
+ actionsArray": [3],
+ },
+ ],
+ },
+ {
+"index": 3,
+ type": "name",
+ props": { "noOfWords": 1, "label": "Middle Name", "isMandatory": false },
+ key": "cc_quotes_journey_sbc",
+ value": "middleName.valueFromNavigationParams",
+ actionIds": [
+ {
+"triggerType": "onSubmitEditing",
+ actionsArray": [4],
+ },
+ ],
+ },
+ {
+"index": 4,
+ type": "name",
+ props": { "noOfWords": 1, "label": "Last Name"},
+ key": "cc_quotes_journey_sbc",
+ value": "lastName.valueFromNavigationParams",
+ actionIds": [
+ {
+"triggerType": "onSubmitEditing",
+ actionsArray": [5],
+ },
+ ],
+ },
+ {
+"index": 5,
+ type": "email",
+ props": {},
+ key": "cc_quotes_journey_sbc",
+ value": "emailId.valueFromNavigationParams",
+ actionIds": [
+ {
+"triggerType": "onSubmitEditing",
+ actionsArray": [6],
+ },
+ ],
+ },
+ {
+"index": 6,
+ type": "dob",
+ props": {},
+ key": "cc_quotes_journey_sbc",
+ value": "dob.valueFromNavigationParams",
+ actionIds": [
+ {
+"triggerType": "onSubmitEditing",
+ actionsArray": [7],
+ },
+ ],
+ },
+ {
+"index": 7,
+ type": "pan",
+ props": {},
+ value": "",
+ actionIds": [],
+ },
+ {
+"index": 8,
+ type": "searchableList",
+ props": {
+"label": "Educational Qualification",
+ data": [
+ {
+"value": "1",
+ label": "Diplomas",
+ },
+ {
+"value": "2",
+ label": "Graduate",
+ },
+ {
+"value": "3",
+ label": "Post-Graduate",
+ },
+ {
+"value": "4",
+ label": "Professional qualification",
+ },
+ {
+"value": "18",
+ label": "Under Graduate",
+ },
+ {
+"value": "19",
+ label": "Ssc/Hsc",
+ },
+ {
+"value": "20",
+ label": "Primary School",
+ },
+ ],
+ },
+ },
+ {
+"index": 9,
+ type": "radioButton",
+ props": {
+"numColumns": 1,
+ label": "Are you an existing Standard Chartered Bank Customer?",
+ data": [{ "label": "Yes", "value": "1"}, "{ "label": "No", "value": "0"}],
+ },
+ },
+ {
+"index": 10,
+ type": "button",
+ props": { "label": "Continue"},
+ value": "",
+ actionIds": [
+ {
+"triggerType": "onPress",
+ actionsArray": [0, "10, "2, "1],
+ },
+ ],
+ },
+ ],
+ actions": [
+ {
+"index": 0,
+ actionType": "validate",
+ data": {},
+ sync": true,
+ },
+ {
+"index": 1,
+ actionType": "navigate",
+ data": {},
+ nextStateIndex": 1,
+ sync": true,
+ },
+ {
+"index": 2,
+ actionType": "setCurrentScreenData",
+ data": {
+"key": "cc_quotes_journey_sbc",
+ payload": {
+"firstName": "2.value",
+ middleName": "3.value",
+ lastName": "4.value",
+ emailId": "5.value",
+ dob": "6.value",
+ panCard": "7.value",
+ eduQual": "8.value",
+ existingCustomer": "9.value",
+ applicationId": "applicationId.valueFromNavigationParams",
+ leadId": "leadId.valueFromNavigationParams",
+ visitorId": "visitorId.valueFromNavigationParams",
+ partnerProductId": "partnerProductId.valueFromNavigationParams",
+ leadQuoteId": "leadQuoteId.valueFromNavigationParams",
+ partnerId": "partnerId.valueFromNavigationParams",
+ visitId": "visitId.valueFromNavigationParams",
+ storedFname": "firstName.valueFromNavigationParams",
+ storedMname": "middleName.valueFromNavigationParams",
+ storedLname": "lastName.valueFromNavigationParams",
+ storedEmail": "emailId.valueFromNavigationParams",
+ storedDob": "dob.valueFromNavigationParams",
+ storedCompany": "companyName.valueFromNavigationParams",
+ storedPin": "pinCode.valueFromNavigationParams",
+ cardName": "cardName.valueFromNavigationParams",
+ bankName": "bankName.valueFromNavigationParams",
+ },
+ },
+ nextStateIndex": 1,
+ sync": true,
+ },
+ {
+"index": 3,
+ actionType": "focusOtherField",
+ data": {
+"focusOn": "3",
+ },
+ },
+ {
+"index": 4,
+ actionType": "focusOtherField",
+ data": {
+"focusOn": "4",
+ },
+ },
+ {
+"index": 5,
+ actionType": "focusOtherField",
+ data": {
+"focusOn": "5",
+ },
+ },
+ {
+"index": 6,
+ actionType": "focusOtherField",
+ data": {
+"focusOn": "6",
+ },
+ },
+ {
+"index": 7,
+ actionType": "focusOtherField",
+ data": {
+"focusOn": "7",
+ },
+ },
+ {
+"index": 8,
+ actionType": "focusOtherField",
+ data": {
+"focusOn": "6`",
+ },
+ },
+ {
+"index": 9,
+ actionType": "sendGaEvent",
+ data": {
+"productType": "creditCard",
+ eventType": "ScreenView",
+ properties": {
+"screenName": "ccPostQuote",
+ pageType": "PersonalDetails",
+ cardName": "cardName.valueFromNavigationParams",
+ bankName": "BankName.valueFromNavigationParams",
+ },
+ },
+ },
+ {
+"index": 10,
+ actionType": "sendGaEvent",
+ data": {
+"productType": "creditCard",
+ eventType": "formSubmit",
+ properties": {
+"category": "ccPostQuote",
+ action": "submitted",
+ screenName": "PersonalDetails",
+ cardName": "cardName.valueFromNavigationParams",
+ bankName": "BankName.valueFromNavigationParams",
+ },
+ },
+ sync": false,
+ },
+ ],
+ subStates": [
+ {
+"index": 0,
+ fieldIds": [0, "1, "2, "3, "4, "5, "6, "7, "8, "9, "10],
+ },
+ ],
+ actionIds": [
+ {
+"triggerType": "onMount",
+ actionsArray": [9],
+ },
+ ],
+ },
+ {
+"index": 1,
+ title": "Credit Card",
+ titleStyle": { "color": "white"},
+ iconStyle": { "tintColor": "white"},
+ style": { "backgroundColor": "rgba(5,47,95,1)"},
+ initialState": 0,
+ fields": [
+ {
+"index": 0,
+ type": "label",
+ props": {
+"text": "Residential Address",
+ fontWeight": "bold",
+ level": 4,
+ style": { "textAlign": "left", "color": "#2137C7", "fontSize": 24 },
+ },
+ },
+ {
+"index": 1,
+ type": "View",
+ props": {
+"style": {
+"backgroundColor": "#E00067",
+ height": 2,
+ width": 56,
+ marginBottom": 18,
+ },
+ },
+ },
+ {
+"index": 2,
+ type": "address",
+ props": { "label": "Address Line1", "multiline": false },
+ value": "",
+ actionIds": [
+ {
+"triggerType": "onSubmitEditing",
+ actionsArray": [3],
+ },
+ ],
+ },
+ {
+"index": 3,
+ type": "address",
+ props": { "label": "Address Line2", "multiline": false },
+ value": "",
+ actionIds": [
+ {
+"triggerType": "onSubmitEditing",
+ actionsArray": [4],
+ },
+ ],
+ },
+ {
+"index": 4,
+ type": "pin",
+ props": {},
+ key": "cc_quotes_journey_sbc",
+ value": "storedPin.valueFromStorage",
+ },
+ {
+"index": 5,
+ type": "searchableList",
+ props": {
+"label": "Residence Type",
+ style": { "marginTop": 12 },
+ data": [
+ {
+"value": "SO",
+ label": "Self Owned",
+ },
+ {
+"value": "LR",
+ label": "Living with Relatives/Parents",
+ },
+ {
+"value": "RE",
+ label": "Rented",
+ },
+ {
+"value": "BA",
+ label": "Bachelor accommodation",
+ },
+ {
+"value": "LO",
+ label": "Lodge",
+ },
+ {
+"value": "CO",
+ label": "Company / Employer Quarter",
+ },
+ {
+"value": "GO",
+ label": "Government Public house",
+ },
+ {
+"value": "OT",
+ label": "Others",
+ },
+ ],
+ },
+ },
+ {
+"index": 6,
+ type": "radioButton",
+ props": {
+"numColumns": 1,
+ label": "Credit Card Mailing Address",
+ data": [
+ {
+"value": "RES",
+ label": "Residence",
+ },
+ {
+"value": "PER",
+ label": "Permanent",
+ },
+ {
+"value": "OFF",
+ label": "Office",
+ },
+ ],
+ },
+ },
+ {
+"index": 7,
+ type": "button",
+ props": { "label": "Continue", "style": { "marginTop": 18 } },
+ value": "",
+ actionIds": [
+ {
+"triggerType": "onPress",
+ actionsArray": [0, "6, "2, "1],
+ },
+ ],
+ },
+ ],
+ actions": [
+ {
+"index": 0,
+ actionType": "validate",
+ data": {},
+ sync": true,
+ },
+ {
+"index": 1,
+ actionType": "navigate",
+ data": {},
+ nextStateIndex": 2,
+ sync": true,
+ },
+ {
+"index": 2,
+ actionType": "setCurrentScreenData",
+ data": {
+"key": "cc_quotes_journey_sbc",
+ payload": {
+"addressLine1": "2.value",
+ addressLine2": "3.value",
+ pin": "4.value",
+ residenceType": "5.value",
+ mailingAddress": "6.value",
+ },
+ },
+ },
+ {
+"index": 3,
+ actionType": "focusOtherField",
+ data": {
+"focusOn": "3",
+ },
+ },
+ {
+"index": 4,
+ actionType": "focusOtherField",
+ data": {
+"focusOn": "4",
+ },
+ },
+ {
+"index": 5,
+ actionType": "sendGaEvent",
+ data": {
+"productType": "creditCard",
+ eventType": "ScreenView",
+ key": "cc_quotes_journey_sbc",
+ properties": {
+"screenName": "ccPostQuote",
+ pageType": "ResidentialDetails",
+ cardName": "cardName.valueFromStorage",
+ bankName": "BankName.valueFromStorage",
+ },
+ },
+ },
+ {
+"index": 6,
+ actionType": "sendGaEvent",
+ data": {
+"productType": "creditCard",
+ eventType": "formSubmit",
+ key": "cc_quotes_journey_sbc",
+ properties": {
+"category": "ccPostQuote",
+ action": "submitted",
+ screenName": "ResidentialDetails",
+ cardName": "cardName.valueFromStorage",
+ bankName": "BankName.valueFromStorage",
+ },
+ },
+ sync": false,
+ },
+ ],
+ subStates": [
+ {
+"index": 0,
+ id": "cc_journey_quotes_hdfc_address_details_1",
+ fieldIds": [0, "1, "2, "3, "4, "5, "6, "7],
+ },
+ ],
+ actionIds": [
+ {
+"triggerType": "onMount",
+ actionsArray": [5],
+ },
+ ],
+ },
+ {
+"index": 3,
+ title": "Credit Cards ",
+ titleStyle": { "color": "white"},
+ iconStyle": { "tintColor": "white"},
+ style": { "backgroundColor": "rgba(5,47,95,1)"},
+ initialState": 0,
+ fields": [
+ {
+"index": 0,
+ type": "label",
+ props": {
+"text": "Employment Details",
+ fontWeight": "bold",
+ level": 4,
+ style": { "textAlign": "left", "color": "#2137C7", "fontSize": 24 },
+ },
+ },
+ {
+"index": 1,
+ type": "View",
+ props": {
+"style": {
+"backgroundColor": "#E00067",
+ height": 2,
+ width": 56,
+ marginBottom": 18,
+ },
+ },
+ },
+ {
+"index": 2,
+ type": "searchableList",
+ props": {
+"label": "Company Name",
+ noOfWords": 12,
+ apiURLToSearchData:
+ "https://api-external.paisabazaar.com/SP/api/v1/utility/employer/",
+ },
+ key": "cc_quotes_journey_sbc",
+ value": "storedCompany.valueFromStorage",
+ actionIds": [],
+ },
+ {
+"index": 3,
+ type": "searchableList",
+ props": {
+"label": "Industry Type",
+ data": [
+ {
+"value": "RS01",
+ label": "Art, "Entertainment, "Recreation & Sports",
+ },
+ { "value": "RS03", "label": "Investment & Securities"},
+ { "value": "RS04", "label": "Insurance"},
+ { "value": "RS05", "label": "Money Services and Insurance Agents"},
+ { "value": "RS06", "label": "Banking, "Accounting & Finance"},
+ { "value": "RS07", "label": "Building Services & Construction"},
+ { "value": "RS08", "label": "Hospitality & Tourism"},
+ { "value": "RS10", "label": "Educational Services"},
+ { "value": "RS11", "label": "Catering, "Restaurant & Food Services"},
+ { "value": "RS13", "label": "Local Non-profit Organization"},
+ { "value": "RS15", "label": "Local Government & Public Utilities"},
+ { "value": "RS16", "label": "Information Technology"},
+ { "value": "RS17", "label": "Telecommunication"},
+ { "value": "RS19", "label": "Manufacturing / Industrial"},
+ { "value": "RS21", "label": "Defence and Weapons"},
+ { "value": "RS23", "label": "Media & Communication"},
+ { "value": "RS24", "label": "Medical & Health Care Services"},
+ { "value": "RS25", "label": "Personal Services, "Retail & Wholesale"},
+ {
+"value": "RS26",
+ label": "Retail Jewelry, "Tobacco Import and Export",
+ },
+ { "value": "RS27", "label": "Precious Metals and Diamonds"},
+ { "value": "RS28", "label": "Property Management & Real Estate"},
+ { "value": "RS29", "label": "Public Transportation & Logistic"},
+ { "value": "RS30", "label": "Logging"},
+ { "value": "RS32", "label": "Agriculture and Fishing"},
+ { "value": "RS33", "label": "Forestry"},
+ { "value": "RS34", "label": "Oil, "Gas and Mining Industry"},
+ { "value": "RS35", "label": "Speciality"},
+ { "value": "RS36", "label": "Textile"},
+ { "value": "RS37", "label": "Automobile"},
+ { "value": "RS38", "label": "Chemical Products"},
+ ],
+ },
+ },
+ {
+"index": 4,
+ type": "searchableList",
+ props": {
+"label": "Occupation",
+ data": [
+ { "value": 91, "label": "Airforce/Navy"},
+ { "value": 48, "label": "Artist/Actor/Entertainer/Model"},
+ { "value": 38, "label": "Beauty Consultant/Hair Stylist"},
+ { "value": 51, "label": "Cabin Crew/Gound Staff"},
+ { "value": 11, "label": "Chartered Accountant"},
+ { "value": 3, "label": "Chartered Architect"},
+ { "value": 13, "label": "Chartered Engineer/Engineer"},
+ { "value": 8, "label": "Chartered Surveyor/Surveyor/valuer"},
+ { "value": 90, "label": "Chinese Physician/Chinese Medical Dcotor"},
+ {
+"value": 73,
+ label": "Civil Servant (Civil Service Govt Disciplinary)",
+ },
+ {
+"value": 74,
+ label": "Civil Servant (Civil Service Non Govt Disciplinary)",
+ },
+ {
+"value": 45,
+ label": "Civil Servant (Non Civil Service/Contract)",
+ },
+ { "value": 89, "label": "Coaching Staff/Athlete/Trainer"},
+ { "value": 93, "label": "Company Secretary"},
+ { "value": 30, "label": "Computer Operater"},
+ {
+"value": 22,
+ label": "Computer Programmer/System Analyst/System Engineer",
+ },
+ { "value": 9, "label": "Consultant/Council Member"},
+ {
+"value": 15,
+ label": "Director/President/Chairman/Chief Executive Officer",
+ },
+ {
+"value": 10,
+ label": "Doctor/Dentist/Medical & Healthcare Specialist",
+ },
+ {
+"value": 49,
+ label": "Film Producer/Film Director/Camera Man/Light Man",
+ },
+ {
+"value": 43,
+ label": "Industrial Quality Control Staff/Warehouse Worker",
+ },
+ {
+"value": 72,
+ label": "Insurance Agent/Insurance Broker/Insurance Sales",
+ },
+ { "value": 2, "label": "Judge/Lawyer/Barrister/Solicitor"},
+ { "value": 19, "label": "Lecturer/Professor/Headmaster/Principal"},
+ { "value": 81, "label": "Litigation Cleck/Legal Clerk"},
+ { "value": 94, "label": "Manager/Executive"},
+ { "value": 60, "label": "Marketing Executive"},
+ { "value": 1, "label": "Medical Officer"},
+ {
+"value": 71,
+ label:
+ "Money Transmition Agent/Foreign Currency Exchange Agent",
+ },
+ { "value": 16, "label": "Nurse"},
+ { "value": 95, "label": "Officer/Supervisor/Administrator"},
+ {
+"value": 23,
+ label": "Optician/Pharmacist/Laboratory Operator/Radiographer",
+ },
+ {
+"value": 80,
+ label": "Personal Financial Consultant/Investment Consultant",
+ },
+ { "value": 5, "label": "Pilot/Aircraft Captain/Ship Captain"},
+ { "value": 84, "label": "Private Tutorial"},
+ { "value": 77, "label": "Property Negotiator/Real Estate Agent"},
+ { "value": 24, "label": "Reportor/Editor/Journalist/Translator"},
+ { "value": 32, "label": "Retail Sales Person/Promoter"},
+ { "value": 7, "label": "SCB Staff"},
+ { "value": 26, "label": "Social Worker"},
+ { "value": 75, "label": "Stock Broker/Stock Dealer"},
+ {
+"value": 34,
+ label": "Teacher Kindergarden/Primary & Secondary School",
+ },
+ ],
+ },
+ },
+ {
+"index": 5,
+ type": "searchableList",
+ props": {
+"label": "Total Work Experience",
+ data": [
+ {
+"value": 1,
+ label": "Less than 1 Year",
+ },
+ {
+"value": 2,
+ label": "1-2 years",
+ },
+ {
+"value": 3,
+ label": "2-3 years",
+ },
+ {
+"value": 4,
+ label": "3-4 years",
+ },
+ {
+"value": 5,
+ label": "4-5 years",
+ },
+ {
+"value": 6,
+ label": "5-6 years",
+ },
+ {
+"value": 7,
+ label": "Greater than 6 years",
+ },
+ ],
+ },
+ },
+ {
+"index": 6,
+ type": "address",
+ props": { "label": "Company Address Line1", "multiline": false },
+ value": "",
+ actionIds": [
+ {
+"triggerType": "onSubmitEditing",
+ actionsArray": [4],
+ },
+ ],
+ },
+ {
+"index": 7,
+ type": "address",
+ props": { "label": "Company Address Line2", "multiline": false },
+ value": "",
+ actionIds": [
+ {
+"triggerType": "onSubmitEditing",
+ actionsArray": [5],
+ },
+ ],
+ },
+ {
+"index": 8,
+ type": "pin",
+ props": { "label": "Company Pincode"},
+
+ value": "",
+ },
+ {
+"index": 9,
+ type": "consent",
+ props": {
+"initialText:
+ "<Bold> Paisabazaar Term & Conditions </Bold> \nBy clicking on submit, "I hereby authorize Paisabazaar and provide my express consent to share my",
+ completeText:
+ "<Bold> Paisabazaar Term & Conditions </Bold> \nBy clicking on submit, "I hereby authorize Paisabazaar and provide my express consent to share my application with the selected bank and obtain my credit Information/credit report from the selected bank as retrieved by the selected bank, "to check eligibility for my application. I agree and understand that this may impact my credit score.I hereby authorize Paisabazaar to retrieve my Credit information report on my behalf from Experian Credit Information Services Private Limited.",
+ style": { "backgroundColor": "#F0F3F6", "marginTop": 24 },
+ },
+ },
+ {
+"index": 10,
+ type": "consent",
+ props": {
+"initialText:
+ "<Bold> Standard Charted Bank Term & Conditions </Bold> \nI confirm that I have read and understood Standard Chartered Bank’s <Link> Privacy Policy </Link> and consequently accept the same.",
+ style": { "backgroundColor": "#F0F3F6", "marginTop": 24 },
+ },
+ },
+ {
+"index": 11,
+ type": "button",
+ props": { "label": "Continue", "style": { "marginTop": 24 } },
+ value": "",
+ actionIds": [
+ {
+"triggerType": "onPress",
+ actionsArray": [0, "10, "2, "7, "3, "8, "6],
+ },
+ ],
+ },
+ ],
+ actions": [
+ {
+"index": 0,
+ actionType": "validate",
+ data": {},
+ sync": true,
+ },
+ {
+"index": 1,
+ actionType": "navigate",
+ data": {},
+ nextStateIndex": 4,
+ sync": true,
+ },
+ {
+"index": 2,
+ actionType": "setCurrentScreenData",
+ data": {
+"key": "cc_quotes_journey_sbc",
+ payload": {
+"Cname": "2.value",
+ industryType": "3.value",
+ occupation": "4.value",
+ workExp": "5.value",
+ CaddressLine1": "6.value",
+ CaddressLine2": "7.value",
+ Cpin": "8.value",
+ },
+ },
+ },
+ {
+"index": 3,
+ actionType": "apiCall",
+ data": {
+"method": "post",
+ url:
+ "https://staging-api-internal.paisabazaar.com/SP/api/v2/application/submit/{applicationId.valueFromStorage}",
+ params": "",
+ header": {},
+ key": "cc_quotes_journey_sbc",
+ body": {
+"firstName": "firstName.valueFromStorage",
+ middleName": "middleName.valueFromStorage",
+ lastName": "lastName.valueFromStorage",
+ emailId": "emailId.valueFromStorage",
+ dob": "dob.valueFromStorage",
+ panCard": "panCard.valueFromStorage",
+ qualificationId": "eduQual.valueFromStorage",
+ existingBankCustomer": "existingCustomer.valueFromStorage",
+
+ presentAddressLine1": "addressLine1.valueFromStorage",
+ presentAddressLine2": "addressLine2.valueFromStorage",
+ presentPincode": "pin.valueFromStorage",
+ residentType": "residenceType.valueFromStorage",
+ cardMailingAdressPreference": "mailingAddress.valueFromStorage",
+
+ employer": "Cname.valueFromStorage",
+ officeAddressLine1": "CaddressLine1.valueFromStorage",
+ officeAddressLine2": "CaddressLine2.valueFromStorage",
+ officePincode": "Cpin.valueFromStorage",
+ industryISIC": "industryType.valueFromStorage",
+ workOccupationType": "occupation.valueFromStorage",
+ workExperience": "workExp.valueFromStorage",
+
+ applicationId": "applicationId.valueFromStorage",
+ leadId": "leadId.valueFromStorage",
+ visitorId": "visitorId.valueFromStorage",
+ partnerProductId": "partnerProductId.valueFromStorage",
+ leadQuoteId": "leadQuoteId.valueFromStorage",
+ partnerId": "partnerId.valueFromStorage",
+ visitId": "visitId.valueFromStorage",
+
+ state": "ELIGIBILITY_PENDING",
+ },
+ },
+ triggers": [{ "fieldId": "id", "value": ""}],
+ sync": true,
+ },
+ {
+"index": 4,
+ actionType": "focusOtherField",
+ data": {
+"focusOn": "7",
+ },
+ },
+ {
+"index": 5,
+ actionType": "focusOtherField",
+ data": {
+"focusOn": "8",
+ },
+ },
+ {
+"index": 6,
+ actionType": "exitJourney",
+ data": {
+"screenName": "AppWebView",
+ key": "cc_quotes_journey_sbc",
+ navigationType": "reset",
+ navigationParams": {
+"apiResponse": "3.valueFromApi.redirectUrl",
+ isFromMapper": true,
+ applicationType": "Credit Card",
+ name": "firstName.valueFromStorage",
+ cardName": "cardName.valueFromStorage",
+ bankName": "BankName.valueFromStorage",
+ partnerProductId": "partnerProductId.valueFromStorage",
+ title": "Credit Card",
+ url": "3.valueFromApi.redirectUrl",
+ },
+ },
+ nextStateIndex": 3,
+ sync": true,
+ },
+ {
+"index": 7,
+ actionType": "changeState",
+ data": {
+"updatedState": { "showLoader": true },
+ },
+ sync": false,
+ },
+ {
+"index": 8,
+ actionType": "changeState",
+ data": {
+"updatedState": { "showLoader": false },
+ },
+ },
+ {
+"index": 9,
+ actionType": "sendGaEvent",
+ data": {
+"productType": "creditCard",
+ eventType": "ScreenView",
+ key": "cc_quotes_journey_sbc",
+ properties": {
+"screenName": "ccPostQuote",
+ pageType": "EmploymentDetails",
+ cardName": "cardName.valueFromStorage",
+ bankName": "BankName.valueFromStorage",
+ },
+ },
+ },
+ {
+"index": 10,
+ actionType": "sendGaEvent",
+ data": {
+"productType": "creditCard",
+ eventType": "formSubmit",
+ key": "cc_quotes_journey_sbc",
+ properties": {
+"category": "ccPostQuote",
+ action": "submitted",
+ label": "EmploymentDetails",
+ cardName": "cardName.valueFromStorage",
+ bankName": "BankName.valueFromStorage",
+ },
+ },
+ sync": false,
+ },
+ ],
+ subStates": [
+ {
+"index": 0,
+ fieldIds": [0, "1, "2, "3, "4, "5, "6, "7, "8, "9, "10, "11],
+ },
+ ],
+ actionIds": [
+ {
+"triggerType": "onMount",
+ actionsArray": [9],
+ },
+ ],
+ },
+ ],
+}
